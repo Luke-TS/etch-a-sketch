@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main {
+  border: 2px solid red;
+  height: 960px;
+  width: 960px;
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=style.css.map */
