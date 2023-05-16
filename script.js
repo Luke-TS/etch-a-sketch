@@ -1,6 +1,18 @@
 const main = document.getElementById('main');
+const reset = document.getElementById('reset');
+reset.onclick = () => {
+    while(main.firstChild) {
+        main.removeChild(main.lastChild);
+    }
+    makeGrid();
+}
 
-function makeGrid(dim) {
+function makeGrid() {
+    let dim = 16;
+    do {
+        dim = prompt('Enter dimention: ');
+    } while (!(dim <= 100 && dim >= 1));
+
     for(let i = 0; i < dim; i++) {
         let container = document.createElement('div');
         container.classList.add('container');
@@ -21,6 +33,4 @@ function makeGrid(dim) {
     }
 }
 
-
-
-makeGrid(prompt('Enter the dimention: '));
+makeGrid();
