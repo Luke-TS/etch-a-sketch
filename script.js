@@ -22,15 +22,24 @@ function makeGrid() {
         for(let j = 0; j < dim; j++) {
             let cell = document.createElement('div');
             cell.classList.add('cell');
+            cell.textContent = '10';
+            cell.style.fontSize = '0px'
             cell.style.flex = '1';
             cell.addEventListener('mouseover', () => {
-                cell.style.backgroundColor = 'red';
+                if(--cell.textContent >= 0) {
+                    cell.style.backgroundColor = darken(cell.textContent);
+                }
             })
             container.appendChild(cell);
         }
 
         main.appendChild(container);
     }
+}
+
+function darken(val) {
+    const rgb = [255, 255, 255].map(x => x * (val/10));
+    return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 }
 
 makeGrid();
