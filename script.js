@@ -11,12 +11,16 @@ function makeGrid(dim) {
             let cell = document.createElement('div');
             cell.classList.add('cell');
             cell.style.flex = '1';
-
+            cell.addEventListener('mouseover', () => {
+                cell.style.backgroundColor = 'red';
+            })
             container.appendChild(cell);
         }
 
         main.appendChild(container);
     }
 }
+
+
 
 makeGrid(prompt('Enter the dimention: '));
